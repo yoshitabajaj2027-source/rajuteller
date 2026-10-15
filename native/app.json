@@ -21,6 +21,10 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "backgroundColor": "#100c17"
+    "backgroundColor": "#100c17",
+    "plugins": [
+      "react-native-google-mobile-ads",
+      "expo-build-properties"
+    ]
   }
 }
