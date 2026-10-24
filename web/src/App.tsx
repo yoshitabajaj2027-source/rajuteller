@@ -18,7 +18,8 @@ const paidCredits = 0;
 const STORAGE_KEY = 'raju-teller-questions-v1';
 
 type Ledger = { count: number; day: string };
-const today = () => new Date().toISOString().slice(0, 10);
+// Daily allowance renews at midnight in the visitor's own browser timezone.
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
 function loadLedger(): Ledger {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
